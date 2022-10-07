@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query cases</title>
+    <style>
+        .bigDiv {
+            margin: 150px;
+            text-align: center;
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+
+        input {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="bigDiv">
+    <form method="post">
+        <label>Username</label>
+        <input type="text" name="username" autocomplete="off">
+        <p></p>
+        <label>Key word</label>
+        <input type="text" name="key_word" autocomplete="off">
+        <p></p>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div class="bigDiv">
+    {{range .cases}}
+    <label>TestResults</label>
+    <input type="text" name="Address" disabled value="{{.TestResults}}">
+    <label>Diagnosis</label>
+    <input type="text" name="Telephone" disabled value="{{.Diagnosis}}">
+    <label>Treatment</label>
+    <input type="text" name="Cases" disabled value="{{.Treatment}}">
+    <p></p>
+    {{end}}
+</div>
+</body>
+</html>

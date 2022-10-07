@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show records</title>
+    <style>
+        .bigDiv {
+            margin: 150px 0;
+            text-align: center;
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+
+        input {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="bigDiv">
+    {{range .records}}
+    <label>Id</label>
+    <input type="text" disabled value="{{.Id}}">
+    <label>Operations</label>
+    <input type="text" disabled value="{{.Operations}}">
+    <label>Roles</label>
+    <input type="text" disabled value="{{.Roles}}">
+    <label>Username</label>
+    <input type="text" disabled value="{{.Username}}">
+    <label>Time</label>
+    <input type="text" disabled value="{{.Time}}">
+    <p></p>
+    {{end}}
+</div>
+</body>
+</html>
